@@ -1,0 +1,7 @@
+spring:
+  thymeleaf:
+    cache: false          # 关闭页面缓存（开发环境使用，避免修改模板后重启服务器），默认 true
+    prefix: classpath:/views/  # 模板文件访问的根路径，默认 classpath:/templates/
+    suffix: .html         # 模板文件的后缀，默认 .html
+    mode: HTML            # 模板类型，默认 HTML
+    encoding: UTF-8       # 字符集编码，默认 UTF-8

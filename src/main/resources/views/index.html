@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf001</title>
+    <!-- CSS -->
+
+    <link type="text/css" rel="stylesheet" th:href="@{/css/index.css}" />
+    <!-- JS -->
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+
+</head>
+<body>
+<h1>黑瞎子001</h1>
+<img th:src="@{/img/logo.jpg}" width="20%" height="20%" alt="黑瞎子photo not found">
+<p th:text="${message}"></p>
+<p th:utext="${url}"></p>
+黑瞎子<p th:text="*{user.name}"></p>
+黑瞎子<p th:text="*{user.birthday}"></p>
+黑瞎子<p th:text="*{user.password}"></p>
+<div th:object="${user1}">
+    <p th:text="*{name}"></p>
+    <p th:text="*{birthday}"></p>
+    <p th:text="*{password}"></p>
+</div>
+<p th:if="${age1>=18}">成年了</p>
+<p  th:unless="${age1>=18}">未成年</p>
+
+<div th:switch="${name0}">
+    <p th:case="黑瞎子">like</p>
+    <p th:case="解雨臣">dislike</p>
+</div>
+
+<table border="1" width="45%">
+    <tr>
+        <td>用户名</td>
+    </tr>
+    <tr th:each="userList:${userList}">
+        <td th:text="${userList.name}"></td>
+    </tr>
+</table>
+</body>
+</html>
